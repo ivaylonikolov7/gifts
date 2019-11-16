@@ -1,7 +1,5 @@
 body{
-    background-image: url('../images/background.svg');  
-    background-size:100% auto;
-    background-repeat: no-repeat;
+    
     font-family:'Rubik'
 }
 li{
@@ -15,49 +13,55 @@ li{
 header nav#menu {
     float:right;
     margin-right:40px;   
-    margin-top:42px;
+    margin-top:12px;
+    font-size:10px;
 }
 #left-side
 {
-    width:50%;
+    width:40%;
+    float:left;
 }
 #right-side{
-    width:50%;  
+    width:60%;
+    background-image: url('../images/background2.svg');  
+    background-size:100% auto;
+    background-repeat: no-repeat;
+    height:1024px;
+    float:left;
 }
 
 #logo-text{
-    font-family:'Rubik', 'sans serif';    
-    margin-bottom:50px;
+    font-family:'Rubik', 'sans serif';
     position: relative;
-    bottom:50px;
+    bottom:35px;
     margin-left:0px;
     font-weight:3200;
 }
 .active{
-    background-color: #a11415;
+    background-color: #ac0506;
     color:#fff;
     padding: 4px 8px;
+    font-weight:bold;
 }
 .clear{
     clear:both;
 }
 .red{
-    color:#E0272F;
+    color:#e9212c;
 }
 #main-sentence{
-    font-size:55px;
+    font-size:35px;
     text-align:center;
 }
 #special-i{
     width: 57px;
     height: 67px;
     background-image:url('../images/gift-icon.png');
-    font-size:65px;
-    font-weight: bold;
+    font-size:6px;
     display:inline-block;
-    padding-left:19px;
+    padding-left:16px;
     font-weight: bold;
     background-repeat: no-repeat;
     font-size: 65px;
-    background-position-y: 0px;
+    background-position-y: 12px;
 }
