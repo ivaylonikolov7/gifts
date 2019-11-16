@@ -1,0 +1,63 @@
+body{
+    background-image: url('../images/background.svg');  
+    background-size:100% auto;
+    background-repeat: no-repeat;
+    font-family:'Rubik'
+}
+li{
+    list-style-type:none;
+    display:inline-block;
+    font-family: 'Nunito' !important;
+}
+#logo{
+    float:left; 
+}
+header nav#menu {
+    float:right;
+    margin-right:40px;   
+    margin-top:42px;
+}
+#left-side
+{
+    width:50%;
+}
+#right-side{
+    width:50%;  
+}
+
+#logo-text{
+    font-family:'Rubik', 'sans serif';    
+    margin-bottom:50px;
+    position: relative;
+    bottom:50px;
+    margin-left:0px;
+    font-weight:3200;
+}
+.active{
+    background-color: #a11415;
+    color:#fff;
+    padding: 4px 8px;
+}
+.clear{
+    clear:both;
+}
+.red{
+    color:#E0272F;
+}
+#main-sentence{
+    font-size:55px;
+    text-align:center;
+}
+#special-i{
+    width: 57px;
+    height: 67px;
+    background-image:url('../images/gift-icon.png');
+    font-size:65px;
+    font-weight: bold;
+    display:inline-block;
+    padding-left:19px;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    font-size: 65px;
+    background-position-y: 0px;
+}
