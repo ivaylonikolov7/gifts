@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/style.css" >
 </head>
 <body>
-  <div id="left-side">
+    <div id="wrap">
       <header>
           <div id="logo">
             <img src="images/logo.png">
@@ -26,11 +26,59 @@
           </nav>
       </header>
       <div class="clear"></div>
-      <section id="main">
-        <div id="main-sentence">Pick the best <span class="red">g<div id="special-i">i</div>ft</span></span>
+      <section id="add-hobbies">
+        <div id="main-sentence">Pick the best 
+          <span class="red">g
+            <div id="special-i">i</div>
+            ft
+          </span>
+        </div>
+        <div id="hobbies-input">
+          <input type="text" placeholder="Enter your hobbies">
+          <div id="added-hobbies">
+            <div class="hobby" id="beekeeping">
+              Beekeping<div class="remove-hobby">x</div>
+            </div>
+            <div class="hobby" id="animals">Animals
+              <div class="remove-hobby">x</div>
+            </div>
+            <div class="hobby" id="hiking">Hiking
+              <div class="remove-hobby">x</div>
+            </div>
+          </div>        
+        </div>      
       </section>
-  </div>
-  <div id="right-side"></div>
+      <section id="recommendations">    
+        <div class="recommended-gift">
+          <img src="images/phone 2.jpg" width="100px" height="100px">
+          <div class="product-name"></div>
+          <div class="price"></div>
+          <div class="gift-match-rating"></div>
+          <input type="button" value="Buy">
+        </div>
+        <div class="recommended-gift">
+          <img src="images/FIFA.jpg" width="100px" height="100px">
+          <div class="product-name"></div>
+          <div class="price"></div>
+          <div class="gift-match-rating"></div>
+          <input type="button" value="Buy">
+        </div>
+        <div class="recommended-gift">
+            <img src="images/mac.jpg" width="100px" height="100px">
+            <div class="product-name"></div>
+            <div class="price"></div>
+            <div class="gift-match-rating"></div>
+            <input type="button" value="Buy">
+        </div>
+        <div class="recommended-gift">
+            <img src="images/watch.jpg" width="100px" height="100px">
+            <div class="product-name"></div>
+            <div class="price"></div>
+            <div class="gift-match-rating"></div>
+            <input type="button" value="Buy">
+        </div>
+      </section>
+    </div>
   <script src="js/scripts.js"></script>
 </body>
 </html>
