@@ -126,6 +126,55 @@ input[type=text]::placeholder
     margin-top:40px;
 }
 .recommended-gift{
-    width:200px;
-    display:inline-block;
+    width:150px;
+    border:1px solid #ebebeb;
+    padding: 10px 5px;
 }
+#recommendations{
+    width:400px;    
+    margin:0 auto;
+    margin-top:50px;
+}
+.product-name{
+    margin-top:24px;
+}
+.price{
+    margin-top:10px;
+    font-size:10px;
+    color: #646464;
+}
+.hexagon {
+    position: relative;
+    width: 35px; 
+    height: 20.21px;
+    background: rgb(255,228,228);
+    background: linear-gradient(90deg, rgba(255,228,228,1) 0%, rgba(0,212,255,1) 100%);
+    margin: 10.10px 0;
+  }
+  
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 17.5px solid transparent;
+    border-right: 17.5px solid transparent;
+  }
+  
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 10.10px solid rgba(0,212,255,1);
+  }
+  
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 10.10px solid rgba(0,212,255,1);
+  }
+  .gift-match-rating{
+      color:#fff;
+      font-size:10px;
+      margin-left:7px;
+      padding-top:5px;
+      
+  }
