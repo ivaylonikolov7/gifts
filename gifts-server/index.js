@@ -8,6 +8,8 @@ mongoose.connect('mongodb://localhost:27017/local', {
     useUnifiedTopology: true  
 });
 
+app.use(express.static(__dirname + '/html'))
+
 const GiftSchema = mongoose.Schema({
     name: String,
     hobbies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Hobby'}],
@@ -57,7 +59,7 @@ app.get('/hobbies', (req, res)=>{
     });
 })
 app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/html/index.html'));
 })
 let server = app.listen(3000, ()=>{
 
