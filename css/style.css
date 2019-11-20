@@ -5,6 +5,10 @@ body{
     font-family:'Rubik';
     background-position: top right;
 }
+a{
+    color:#000;
+    text-decoration: none;
+}
 li{
     list-style-type:none;
     display:inline-block;
@@ -126,20 +130,23 @@ input[type=text]::placeholder
     margin-top:40px;
 }
 .recommended-gift{
+    padding-top:12px;
     width:150px;
     border:1px solid #ebebeb;
-    padding: 10px 5px;
+    height:200px;
+    display:inline-block;
+    margin-right:-4px;
 }
 #recommendations{
-    width:400px;    
-    margin:0 auto;
+    width:670px !important;
+    margin-left:30px;
     margin-top:50px;
 }
 .product-name{
-    margin-top:24px;
+    
 }
 .price{
-    margin-top:10px;
+    margin-top:5px;
     font-size:10px;
     color: #646464;
 }
@@ -177,4 +184,46 @@ input[type=text]::placeholder
       margin-left:7px;
       padding-top:5px;
       
+  }
+  input[type=button]
+  {
+    margin: 0 auto;
+    width:40px;
+    background-color: #fc2112;
+    color: #fff;
+    border: 1px solid #ac0506;
+    padding:4px 12px;
+    display:block;  
+    box-sizing: content-box;
+    margin-top:10px;    
+  }
+  input[type=button]:hover{
+    border: 1px solid red;
+    
+  }
+  input[type=button]:active{
+    outline:none;
+    border: 1px solid pink;
+    box-shadow: none;
+    
+  }
+  .recommended-gift img{
+      margin: 0 auto;
+      display:block;
+  }
+  .side{
+      float:left;
+  }
+  #description{
+      margin-left:10px;
+  }
+  .product-description{
+      margin-top:20px;
+      padding-left:15px;
+  }
+  .fa-search
+  {
+      color:#eee;    
+      position:relative;
+      left:-30px;
   }
