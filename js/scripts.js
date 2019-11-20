@@ -1,1 +1,0 @@
-let gifts = document.querySelector

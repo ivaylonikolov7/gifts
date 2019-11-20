@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 let mongoose = require('mongoose');
+let path = require('path');
 
 mongoose.connect('mongodb://localhost:27017/local', { 
     useNewUrlParser: true,
@@ -44,16 +45,19 @@ GiftSchema.statics.filterByHobby = function(hobbiesInput){
 const Hobby = mongoose.model('Hobby', HobbySchema);
 const Gift = mongoose.model('Gift', GiftSchema);
 
-app.get('/get-gifts', (req, res)=>{
+app.get('/gifts', (req, res)=>{
     let hobbies = Object.values(req.query);
     Gift.filterByHobby(hobbies).then(gifts=>{
         res.send(gifts)
     });
 })
-app.get('/get-hobbies', (req, res)=>{
+app.get('/hobbies', (req, res)=>{
     Hobby.find().then((result)=>{    
         res.send(result)
     });
+})
+app.get('/', (req, res)=>{
+    res.sendFile(path.join(__dirname + '/index.html'));
 })
 let server = app.listen(3000, ()=>{
 
