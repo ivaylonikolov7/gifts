@@ -15,7 +15,8 @@ const GiftSchema = mongoose.Schema({
     hobbies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Hobby'}],
     price: Number,
     image: String,
-    timesClicked: Number
+    timesClicked: Number,
+    url: String
 })
 const HobbySchema = mongoose.Schema({
      name: String,    
@@ -44,19 +45,33 @@ GiftSchema.statics.filterByHobby = function(hobbiesInput){
     })
 }
 
+
+
 const Hobby = mongoose.model('Hobby', HobbySchema);
 const Gift = mongoose.model('Gift', GiftSchema);
 
 app.get('/gifts', (req, res)=>{
-    let hobbies = Object.values(req.query);
-    Gift.filterByHobby(hobbies).then(gifts=>{
-        res.send(gifts)
-    });
+    if(req.query.hobbies){
+        let hobbies = req.query.hobbies.split(',')
+        Gift.filterByHobby(hobbies).then(gifts=>{
+            res.send(gifts)
+        })
+    }
+    else{
+        Gift.find().populate({
+            path: 'hobbies',
+        }).then(gifts=>{
+            res.send(gifts)
+        });
+    }
 })
 app.get('/hobbies', (req, res)=>{
-    Hobby.find().then((result)=>{    
-        res.send(result)
-    });
+    if(req.query.hobby==null){
+        Hobby.findOne({name: req.query.hobby}).then((result)=>{
+            res.send(result)
+        });    
+    }
+    
 })
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname + '/html/index.html'));

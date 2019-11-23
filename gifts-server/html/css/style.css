@@ -138,46 +138,16 @@ input[type=text]::placeholder
     margin-right:-4px;
 }
 #recommendations{
-    width:670px !important;
-    margin-left:30px;
+    width:604px !important;
+    margin: 0 auto;
     margin-top:50px;
-}
-.product-name{
-    
 }
 .price{
     margin-top:5px;
     font-size:10px;
     color: #646464;
 }
-.hexagon {
-    position: relative;
-    width: 35px; 
-    height: 20.21px;
-    background: rgb(255,228,228);
-    background: linear-gradient(90deg, rgba(255,228,228,1) 0%, rgba(0,212,255,1) 100%);
-    margin: 10.10px 0;
-  }
-  
-  .hexagon:before,
-  .hexagon:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    border-left: 17.5px solid transparent;
-    border-right: 17.5px solid transparent;
-  }
-  
-  .hexagon:before {
-    bottom: 100%;
-    border-bottom: 10.10px solid rgba(0,212,255,1);
-  }
-  
-  .hexagon:after {
-    top: 100%;
-    width: 0;
-    border-top: 10.10px solid rgba(0,212,255,1);
-  }
+
   .gift-match-rating{
       color:#fff;
       font-size:10px;
@@ -226,4 +196,7 @@ input[type=text]::placeholder
       color:#eee;    
       position:relative;
       left:-30px;
+  }
+  .description{
+      margin-left:10px;
   }
