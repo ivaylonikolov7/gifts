@@ -24,7 +24,6 @@ function initialHobbiesClearUp(addedHobbies) {
 }
 
 function insertHobbiesInDom(newHobby, addedHobbies) {
-    let hobbies = getHobbies()
     ajax.get('http://localhost:3000/hobbies', { hobby: newHobby}, (result) => {
         let template = '';
         if (result != '') {
@@ -55,6 +54,4 @@ function addOrResetHobbies(addedHobbies, inputHobby) {
         currentHobbiesText = []
     }
     currentHobbiesText.push(inputHobby)
-    console.log(currentHobbiesText);
-
 }
