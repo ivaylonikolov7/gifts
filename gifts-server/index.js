@@ -61,7 +61,7 @@ app.get('/gifts', (req, res)=>{
         Gift.find().populate({
             path: 'hobbies',
         }).then(gifts=>{
-            res.send(gifts)
+            res.send(gifts);
         });
     }
 })
