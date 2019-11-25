@@ -66,10 +66,13 @@ app.get('/gifts', (req, res)=>{
     }
 })
 app.get('/hobbies', (req, res)=>{
-    if(req.query.hobby==null){
+    if(req.query.hobby!=null){
         Hobby.findOne({name: req.query.hobby}).then((result)=>{
             res.send(result)
         });    
+    }
+    else{
+        res.send('')
     }
     
 })

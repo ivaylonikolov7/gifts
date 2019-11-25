@@ -1,10 +1,11 @@
 let clearUp = 0;
 let selectedHobbies = 0;
 let currentHobbiesText = []
+let addedHobbiesToDom = document.querySelector('#added-hobbies');
 
 hobbyInput.addEventListener('keydown', (event)=>{
-    if(event.code=='Space'){
-        let addedHobbiesToDom = document.querySelector('#added-hobbies');
+    console.log(event);
+    if(event.key==' '){
         let newHobby = (hobbyInput.value).trim();        
         hobbyInput.value = '';        
         initialHobbiesClearUp(addedHobbiesToDom);
@@ -42,9 +43,10 @@ function insertHobbiesInDom(newHobby, addedHobbies) {
                 <div class="hobby" id="beekeeping">
                     No Such Hobby<div class="remove-hobby">x</div>
                 </div>`;
-        }
-        addedHobbies.innerHTML += template;
+        }    
+        addedHobbies.innerHTML += template;        
     });
+    
 }
 
 function addOrResetHobbies(addedHobbies, inputHobby) {

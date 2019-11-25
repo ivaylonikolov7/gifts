@@ -133,7 +133,7 @@ input[type=text]::placeholder
     padding-top:12px;
     width:150px;
     border:1px solid #ebebeb;
-    height:200px;
+    height:225px;
     display:inline-block;
     margin-right:-4px;
 }
@@ -167,14 +167,7 @@ input[type=text]::placeholder
     display:block;  
     box-sizing: content-box;
     margin-top:10px;
-    position:relative;    
-  }
-  button:after{
-      content: '';
-      position:absolute;
-      left:0;
-      bottom:0;
-      width: 64px;      
+    position: relative;
   }
   input[type=button]:hover{
     border: 1px solid red;
@@ -207,9 +200,9 @@ input[type=text]::placeholder
       position:relative;
       left:-30px;
   }
-  .description{
-      margin-left:10px;
-  }
+.description{
+    margin-top:5px;
+}
 .mini-hobby{
     font-size:10px;    
     color:#fff;
@@ -240,6 +233,7 @@ button::after{
     content:"\f054";
     font-weight: 900;
     position: absolute;
-    bottom:0;
-    right:10px;
+    top:5px;
+    right:5px;
+
 }

@@ -12,10 +12,22 @@ function updateGifts(hobbiesDb){
         giftsDb = JSON.parse(giftsDb);    
         giftsDom.innerHTML = ''
         giftsDb.forEach(gift=>{
+            let templateCss = `
+                position:relative;
+                top:10px;
+                width:60%;
+                height:2px;
+                display:block;
+                content: '';
+                margin: 0 auto;
+                background: rgb(2,0,36);
+                background: linear-gradient(90deg, ${gift.hobbies[0].color1} 0%, ${gift.hobbies[0].color2} 100%);
+            </style>`;
             let template = `
             <div class="recommended-gift">
                 <img src="${gift.image}" width="70px">
-                <div class="product-description">            
+                <div class="underline" style="${templateCss}"></div>
+                <div id=s${gift._id} class="product-description">            
                     <div class="description">
                         <div class="product-name">${gift.name}</div>
                         <div class="price">Price: ${gift.price}0 $</div>
@@ -32,21 +44,14 @@ function updateGifts(hobbiesDb){
                     </div>
                 </div>                
                 <div class="clear"></div>
-                <button>Buy</button>        
+                <button id="s${gift._id}" style="background-color: ${gift.hobbies[0].color1};" 
+                    onmouseover="this.style.border = '1px solid ${gift.hobbies[0].color2}'"
+                    onmouseout="this.style.border = '0px solid ${gift.hobbies[0].color2}'">
+                    Buy
+                </button>        
             </div>`;
-            let templateCss = `<style>
-                .product-description:before{
-                    top:-8px;
-                    position:relative;
-                    width:100%;
-                    height:2px;
-                    display:block;
-                    content: '';
-                    background: rgb(2,0,36);
-                    background: linear-gradient(90deg, ${gift.hobbies[0].color1} 0%, ${gift.hobbies[0].color1} 35%, ${gift.hobbies[0].color2} 100%);
-                }
-            </style>`;
-            document.head.innerHTML += templateCss;
+            
+            //document.head.innerHTML += templateCss;
             giftsDom.innerHTML+=template;
         })    
     })
