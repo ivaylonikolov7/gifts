@@ -1,6 +1,6 @@
 let clearUp = 0;
 let selectedHobbies = 0;
-let currentHobbiesText = []
+let currentHobbiesText = ['Insert your favourite hobby here'];
 let addedHobbiesToDom = document.querySelector('#added-hobbies');
 
 hobbyInput.addEventListener('keydown', (event)=>{
@@ -33,9 +33,10 @@ function insertHobbiesInDom(newHobby, addedHobbies) {
                 <div class="hobby" style = "
                     background-color:${hobbyJSONDb.color1};
                     border: 1px solid ${hobbyJSONDb.color2};
+                    color: ${hobbyJSONDb.color2};
                 ">
                     ${hobbyJSONDb.name}
-                    <div class="remove-hobby">x</div>
+                    <div class="remove-hobby" style = "color: ${hobbyJSONDb.color2};">x</div>
                 </div>`;
         }
         else {

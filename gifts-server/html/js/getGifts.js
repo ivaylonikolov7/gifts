@@ -9,8 +9,8 @@ function initiateFirstGifts(){
 }
 function updateGifts(hobbiesDb){
     ajax.get('http://localhost:3000/gifts', {hobbies: hobbiesDb}, (giftsDb) => {    
-        giftsDb = JSON.parse(giftsDb);    
-        giftsDom.innerHTML = ''
+        giftsDb = JSON.parse(giftsDb);
+        giftsDom.innerHTML = '';
         giftsDb.forEach(gift=>{
             let templateCss = `
                 position:relative;
@@ -30,10 +30,9 @@ function updateGifts(hobbiesDb){
                 <div id=s${gift._id} class="product-description">            
                     <div class="description">
                         <div class="product-name">${gift.name}</div>
-                        <div class="price">Price: ${gift.price}0 $</div>
+                        <div class="price">${gift.price}0 $</div>
                     </div>
-                    <div class="mini-hobbies">
-                        <div class="tags">Tags:</div>
+                    <div class="mini-hobbies">                    
                         <div style="
                         background-color: ${gift.hobbies[0].color1}; 
                         color: ${gift.hobbies[0].color2};" 
@@ -49,8 +48,7 @@ function updateGifts(hobbiesDb){
                     onmouseout="this.style.border = '0px solid ${gift.hobbies[0].color2}'">
                     Buy
                 </button>        
-            </div>`;
-            
+            </div>`;            
             //document.head.innerHTML += templateCss;
             giftsDom.innerHTML+=template;
         })    
