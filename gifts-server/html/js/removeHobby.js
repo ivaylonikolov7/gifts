@@ -1,18 +1,23 @@
-    let buttonRemoveHobbies = Object.values(document.getElementsByClassName('remove-hobby'))    ;
+addRemoveHobbyOnClick();
 
 
-buttonRemoveHobbies.forEach((btnRemoveHobby)=>{
-    btnRemoveHobby.addEventListener('click',removeHobbyDom())
-})
-function removeHobbyDom() {
-    return (e) => {
-        let parentOfThis = e.currentTarget.parentElement;
-        let hobbyNameFromDom = e.currentTarget.parentElement.innerText;
-        hobbyNameFromDom = hobbyNameFromDom.substring(0, hobbyNameFromDom.length-2);
-        console.log(hobbyNameFromDom);
-        removeHobbyFromArray(hobbyNameFromDom);
-        parentOfThis.remove();
-    };
+function addRemoveHobbyOnClick() {
+    let buttonRemoveHobbies = Object.values(document.getElementsByClassName('remove-hobby'));
+    buttonRemoveHobbies.forEach((btnRemoveHobby) => {
+        btnRemoveHobby.addEventListener('click', removeHobby);
+    });
+}
+
+function removeHobby(e){
+    let hobbyNameFromDom = e.currentTarget.parentElement.innerText;
+    hobbyNameFromDom = hobbyNameFromDom.substring(0, hobbyNameFromDom.length-2);
+    removeHobbyDom(e)
+    removeHobbyFromArray(hobbyNameFromDom);
+    updateGifts(currentHobbiesText)
+}
+function removeHobbyDom(e) {
+    let parentOfThis = e.currentTarget.parentElement;
+    parentOfThis.remove();        
 }
 
 function removeHobbyFromArray(hobby){

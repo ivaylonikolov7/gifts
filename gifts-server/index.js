@@ -2,6 +2,28 @@ let express = require('express');
 let app = express();
 let mongoose = require('mongoose');
 let path = require('path');
+let http = require('http').createServer(app);
+let io = require('socket.io')(http);
+
+io.on('connection', function(socket){
+    let roomSocket;
+    socket.on('send admin message', (data)=>{
+        io.to(roomSocket).emit('user send admin', {message: data.message, room:roomSocket});
+    })    
+    socket.on('join room', (roomStr)=>{
+        roomSocket = roomStr
+        socket.join(roomStr);
+        io.emit('admin please join room', roomStr);
+    })
+    socket.on('make admin join room', (roomStr)=>{
+        socket.join(roomStr);
+        roomSocket = roomStr
+        io.to(roomStr).emit('add a room to frontend', roomStr);
+    })
+    socket.on('send user message', message =>{
+        io.to(roomSocket).emit('admin send user message', message)
+    })
+  });
 
 mongoose.connect('mongodb://localhost:27017/local', { 
     useNewUrlParser: true,
@@ -9,6 +31,7 @@ mongoose.connect('mongodb://localhost:27017/local', {
 });
 
 app.use(express.static(__dirname + '/html'))
+
 
 const GiftSchema = mongoose.Schema({
     name: String,
@@ -79,6 +102,9 @@ app.get('/hobbies', (req, res)=>{
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname + '/html/index.html'));
 })
-let server = app.listen(3000, ()=>{
+app.get('/chat', (req, res)=>{    
+    res.sendFile(path.join(__dirname + '/html/chat.html'));
+})
+http.listen(3000, ()=>{
 
 })

@@ -26,7 +26,7 @@ function updateGifts(hobbiesDb){
             let template = `
             <div class="recommended-gift">
                 <img src="${gift.image}" width="70px">
-                <div class="underline" style="${templateCss}"></div>
+                
                 <div id=s${gift._id} class="product-description">            
                     <div class="description">
                         <div class="product-name">${gift.name}</div>
@@ -34,16 +34,15 @@ function updateGifts(hobbiesDb){
                     </div>
                     <div class="mini-hobbies">                    
                         <div style="
-                        background-color: ${gift.hobbies[0].color1}; 
-                        color: ${gift.hobbies[0].color2};" 
-                        class="mini-hobby">${gift.name}</div>
+                        background-color: ${gift.hobbies[0].color1};" 
+                        class="mini-hobby">${gift.hobbies[0].name}</div>
                         <div style="
-                        background-color: ${gift.hobbies[0].color1}; 
-                        color: ${gift.hobbies[0].color2};" class="mini-hobby">Animal</div>
+                        background-color: ${gift.hobbies[0].color1};"
+                        class="mini-hobby">Animal</div>
                     </div>
                 </div>                
                 <div class="clear"></div>
-                <button id="s${gift._id}" style="background-color: ${gift.hobbies[0].color1};" 
+                <button id="s${gift._id}" 
                     onmouseover="this.style.border = '1px solid ${gift.hobbies[0].color2}'"
                     onmouseout="this.style.border = '0px solid ${gift.hobbies[0].color2}'">
                     Buy

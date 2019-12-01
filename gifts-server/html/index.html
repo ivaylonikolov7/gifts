@@ -48,7 +48,7 @@
           <span id="search-icon"></span>
           <div id="added-hobbies">
             <div class="hobby" id="beekeeping">
-              Insert your favourite hobby here<div class="remove-hobby">x</div>
+              Your favourite hobby go here<div class="remove-hobby">x</div>
             </div>
           </div>        
         </div>      
@@ -56,6 +56,24 @@
       <section id="recommendations">    
       </section>
     </div>
+    <section id="live-chat">
+      <div id="live-chat-header">
+        <span id="header">Welcome to LiveChat</span>
+        <span id="icons">
+            <i id="popup" class="fas fa-window-maximize"></i>
+            <i class="fas fa-window-close"></i>
+        </span>
+      </div>
+      <div id="messages" class="hide">
+      </div>
+      <div id="message-board" class="hide">
+        <textarea></textarea>
+      </div>
+      </div>
+    </section>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/uuid.js"></script>
+    <script src="js/chat.js"></script>
     <script src="js/ajax.js"></script>
     <script src="js/getGifts.js"></script>
     <script src="js/removeHobby.js"></script>

@@ -21,6 +21,7 @@ function initialHobbiesClearUp(addedHobbies) {
     if (clearUp == 0) {
         addedHobbies.innerHTML = '';
         clearUp++;
+        currentHobbiesText=[];
     }
 }
 
@@ -45,9 +46,9 @@ function insertHobbiesInDom(newHobby, addedHobbies) {
                     No Such Hobby<div class="remove-hobby">x</div>
                 </div>`;
         }    
-        addedHobbies.innerHTML += template;        
+        addedHobbies.innerHTML += template;
+        addRemoveHobbyOnClick();
     });
-    
 }
 
 function addOrResetHobbies(addedHobbies, inputHobby) {
